@@ -1,0 +1,73 @@
+@mixin border-radius($radius...){
+    -moz-border-radius:$radius;
+    -webkit-border-radius:$radius;
+    -o-border-radius:$radius;
+    -ms-border-radius:$radius;
+    border-radius:$radius;
+}
+@mixin transition($transition-time ...){
+    -moz-transition:  $transition-time;
+    -webkit-transition: $transition-time;
+    -ms-transition:  $transition-time;
+    -o-transition: $transition-time;
+    transition: $transition-time; 
+}
+@mixin transform($transform ...){
+    -moz-transform:  $transform;
+    -webkit-transform: $transform;
+    -ms-transform:  $transform;
+    -o-transform: $transform;
+    transform: $transform; 
+}
+@mixin  border($border...) {
+    -webkit-border:$border;
+    -moz-border:$border;
+    -o-border:$border;
+    -ms-border:$border;
+    border:$border;
+}
+@mixin  border-top($border-top...) {
+    -webkit-border-top:$border-top;
+    -moz-border-top:$border-top;
+    -o-border-top:$border-top;
+    -ms-border-top:$border-top;
+    border-top:$border-top;
+}
+@mixin  border-bottom($border-bottom...) {
+    -webkit-border-bottom:$border-bottom;
+    -moz-border-top:$border-bottom;
+    -o-border-bottom:$border-bottom;
+    -ms-border-bottom:$border-bottom;
+    border-bottom:$border-bottom;
+}
+@mixin box-shadow($box-shadow-details...){
+    -webkit-box-shadow:$box-shadow-details;
+    -o-box-shadow:$box-shadow-details;
+    -ms-box-shadow:$box-shadow-details;
+    -moz-box-shadow:$box-shadow-details;
+    box-shadow:$box-shadow-details;
+
+}
+@mixin text-shadow($text-shadow-details...){
+    -webkit-text-shadow:$text-shadow-details;
+    -o-text-shadow:$text-shadow-details;
+    -ms-text-shadow:$text-shadow-details;
+    -moz-text-shadow:$text-shadow-details;
+    text-shadow:$text-shadow-details;
+
+}
+@mixin  outline($outline...) {
+    -webkit-outline:$outline;
+    -moz-outline:$outline;
+    -o-outline:$outline;
+    -ms-outline:$outline;
+    outline:$outline;
+}
+
+@mixin filter($grayscale...) {
+    -webkit-filter:$grayscale;
+    -ms-filter:$grayscale;
+    -moz-filter:$grayscale;
+    -o-filter:$grayscale;
+    filter:$grayscale;
+}

@@ -1,0 +1,275 @@
+@import '_mixins';
+body{
+    background: url("../images/bg_weather.svg") no-repeat;
+    background-size: cover;
+    color:hsl(210, 98%, 17%);
+    font-family: 'lato', sans-serif;
+}
+@media (min-width: 576px){
+    .section_container {
+        max-width: 540px;
+    }
+  }
+  @media (min-width: 640px){
+    .cart_section_container{
+        max-width: 680px;
+    }
+  }
+  @media (min-width: 768px){
+    .section_container {
+        max-width: 720px;
+    }
+  }
+  @media (min-width: 932px){
+    .cart_section_container{
+        max-width: 880px;
+    }
+  }
+  @media (min-width: 992px){
+    .section_container {
+        max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px){
+    .section_container {
+        max-width: 1140px;
+    }
+  }
+  @media (min-width: 1600px){
+    .section_container{
+        max-width: 1250px;
+    }
+  }
+  .section_container{
+    margin: 0 auto;
+  }
+.grid{
+    display:-moz-grid;
+    display:grid;
+}
+.flex{
+    display: -webkit-flex;
+    display: flex;
+}
+
+.header{
+    background: hsl(199, 70%, 95%);
+    @extend .flex;
+    justify-content: space-around;
+    padding-top:20px;
+    padding-bottom:20px;
+    span{
+        font-weight: 600;
+        font-size: 24px;
+    }
+    .m_logo{
+        font-family: 'Leckerli One', cursive;
+        background: red;
+        @include border-radius(4px);
+        padding:3px 8px;
+        color:hsl(199, 70%, 95%);
+        text-align: center;
+    }
+    .input{
+        height:20px;
+        max-width: 200px;
+        font-size: .85rem;
+        margin-right:10px;
+        @include border(none);
+        @include border-radius(5px);
+        padding:5px 10px;
+        @include transition (all 0.35s);
+        @include border-bottom(1px solid hsl(199, 70%, 50%));
+        &:focus{
+            @include outline(none);
+            @include box-shadow(none);
+            @include transition (all 0.35s);
+            @include border-bottom (1px solid hsl(14, 70%, 50%))
+        }
+    }
+    .select{
+        height:31px; 
+        background: white;
+        margin-right:20px;
+    }
+    button{
+        padding:10px;
+        background: none;
+        height:20px;
+        width: 20px;
+        padding: 0;
+        @include border(none);
+        &:hover{
+            cursor: pointer;
+        }
+        &:focus{
+            @include outline(none);
+            @include box-shadow(none);
+        }
+        svg{
+            vertical-align: middle;
+            height: 100%;
+            width: 100%;
+            @include transition (all 0.35s);
+            fill:hsl(199, 20%, 25%);
+            &:hover{
+                height: 80%;
+                width: 80%;
+                fill: hsl(14, 70%, 50%);
+                fill: white;
+                @include border-radius(5px);
+                background: red;
+                padding: 6px;
+                @include transition (all 0.35s);
+            }
+        }
+    }
+}
+section{
+    text-align: center;
+    .location_placeholder{
+        padding:60px;
+        padding-bottom: 50px;
+        .location_icon{
+            height: 15px;
+            width: 15px;
+        }
+        span{
+            padding-left:5px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .date_container{
+            padding-top:10px;
+            span{
+                font-size: 15px;
+                font-size: 16px;
+                font-family: 'Tajawal', sans-serif;
+                font-family: 'Source Code Pro', monospace;
+                color:hsl(210, 90%, 30%);
+            }
+        }
+    }
+    .weathe_image_container{
+        img{
+            max-height:50px;
+            max-width:50px;
+            object-fit: contain;
+        }
+        .degree{
+            font-size: 100px;
+            font-weight: 100;
+            padding-left:10px;
+            font-family: 'Yantramanav', sans-serif;
+        }
+        .sup{
+            font-weight: 600;
+            font-family: 'roboto', sans-serif;
+            vertical-align: top;
+            font-size: 20px;
+        }
+    }
+    .subContent{
+        p{
+            margin:0;
+        }
+    }
+    .humidity{
+        padding-left:10px;
+    }
+   
+    //Hourly
+    .hourly_container_main{
+        padding-top:60px;
+        padding-bottom:60px;
+        .hourly_title{
+            text-align: left;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            padding-left:30px;
+        }
+        .hourly_items_main{
+            @extend .grid;
+            grid-template-columns: repeat(8, minmax(100px, 1fr));
+            @include border-radius(20px);
+            @include border(1px solid hsla(199, 70%, 50%,0.12));
+            grid-gap:40px;
+            text-align: left;
+            padding:30px;
+            background: hsla(199, 70%, 98%,0.6);
+            @include box-shadow(1px 1px 6px 3px hsla(199, 70%, 50%,0.03));
+            overflow-x: scroll;
+           .hourly_items{
+            padding:0;
+            text-align: center;
+            img{
+                height: 25px;
+                width: 25px;
+            }
+            .raindrop{
+                padding-top:15px;
+                img{
+                    height: 12px;
+                    width: 12px;
+                }
+                span{
+                    font-size: 13px;
+                    padding-left:3px;
+                }
+                p{
+                    display: inline;
+                    margin:0;
+                    .temp_range{
+                        vertical-align: super;
+                    }
+                }
+            }
+           }
+        }
+        &.daily_container_main{
+            padding-top:0;
+            .hourly_items_main{
+                grid-template-columns: repeat(7, minmax(100px, 1fr));
+            }
+        }
+    }
+    
+}
+.footer{
+    padding: 20px;
+   p{
+       font-size: 14px;
+       span{
+           color:red;
+       }
+   } 
+}
+.spinner {
+    /* Spinner size and color */
+    width: 1.5rem;
+    height: 1.5rem;
+    border-top-color: #444;
+    border-left-color: #444;
+  
+    /* Additional spinner styles */
+    animation: spinner 400ms linear infinite;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50%;  
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Animation styles */
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .spinner-blue {
+    border-top-color: #09d;
+    border-left-color: #09d;
+  }  
